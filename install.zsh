@@ -23,4 +23,9 @@ read OS_DRIVE
 
 clear
 fdisk -l "$OS_DRIVE"
-echo -e "\n\nIs this your drive?"
+echo -e "\n\nIs this your drive? (Y/N)"
+read YESORNO
+if [ "$YESORNO" == "Y" ] | [ "$YESORNO" == "y" ]
+then
+	mkfs.ext4 "$OS_DRIVE"
+fi
