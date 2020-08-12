@@ -18,7 +18,7 @@ fi
 clear
 fdisk -l
 
-echo "Please input the full device path where you want Arch:"
+echo -e "\n\nPlease input the full device path where you want Arch:"
 read OS_DRIVE
 
 clear
