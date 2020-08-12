@@ -88,7 +88,7 @@ mount "$EFI_PART" /mnt/boot/efi
 
 # Install Arch base
 clear
-pacstrap /mnt base linux linux-firmware nano less dhcpcd sudo pacman-contrib
+pacstrap /mnt base linux linux-firmware nano less dhcpcd sudo pacman-contrib reflector
 
 
 # Generate fstab
@@ -106,13 +106,27 @@ ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 hwclock --systohc
 
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+
 locale-gen
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
-echo "archy" >> /etc/hostname
+echo "archy" > /etc/hostname
 
 echo "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\tarchy.localdomain archy" >> /etc/hosts
 
 mkinitcpio -P
+
+useradd -m -G sys,wheel,users,adm,log -s /bin/zsh hackerman
+passwd hackerman
+
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.arch_install_bak
+reflector --country "India" --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+pacmsn -Syy
+
+pacman -S grub efibootmgr os-prober
+
+grub-install --target=x86_64-efi --bootloader-id=grub --efi-directory=/boot/efi
 
