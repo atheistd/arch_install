@@ -81,7 +81,7 @@ clear
 echo -n "\n\nIs this script running in a VM? (Y/N)"
 read VMYN
 
-if [[ "$VMYN" == "y" ] | [ "$VMYN" == "Y" ]]
+if [[ "$VMYN" == "y" || "$VMYN" == "Y" ]]
 then
 	mkfs.fat -F32 "$EFI_PART"
 fi
@@ -108,5 +108,3 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 clear
 cat /mnt/etc/fstab
-
-
