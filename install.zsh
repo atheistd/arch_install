@@ -25,13 +25,13 @@ fi
 clear
 fdisk -l
 
-echo -e "\n\n\nPlease input the full device path where you want Arch:"
+echo -e "\n\n\nPlease input the full device path where you want OS:"
 read OS_DRIVE
 
 clear
 fdisk -l "$OS_DRIVE"
 
-echo -e "\n\nIs this your drive? (Y/N)"
+echo -e "\n\nIs this your OS drive? (Y/N)"
 read BOOTYESORNO
 
 if [[ "$BOOTYESORNO" == "Y" || "$BOOTYESORNO" == "y" ]]
@@ -94,8 +94,8 @@ mkfs.ext4 "$OS_DRIVE"
 
 # Mount drives
 mount "$OS_DRIVE" /mnt
-mkdir -p /mnt/boot/efi
-mount "$EFI_PART" /mnt/boot/efi
+mkdir -p /mnt/efi
+mount "$EFI_PART" /mnt/efi
 
 
 # Install Arch base
