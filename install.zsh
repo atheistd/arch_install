@@ -75,6 +75,18 @@ else
 fi
 
 
+# Asks user if the script is running in a VM
+## to format EFI partiton otherwise grub misbehaves
+clear
+echo -n "\n\nIs this script running in a VM? (Y/N)"
+read VMYN
+
+if [[ "$VMYN" == "y" ] | [ "$VMYN" == "Y" ]]
+then
+	mkfs.fat -F32 "$EFI_PART"
+fi
+
+
 # Formatting the OS_DRIVE to ext4
 clear
 mkfs.ext4 "$OS_DRIVE"
