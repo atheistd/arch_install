@@ -79,6 +79,7 @@ fi
 ## to format EFI partiton otherwise grub misbehaves
 clear
 echo -n "\n\nIs this script running in a VM? (Y/N)"
+echo -n "\ni.e. Do you want to format your EFI partiton?"
 read VMYN
 
 if [[ "$VMYN" == "y" || "$VMYN" == "Y" ]]
@@ -94,17 +95,17 @@ mkfs.ext4 "$OS_DRIVE"
 
 # Mount drives
 mount "$OS_DRIVE" /mnt
-mkdir -p /mnt/efi
-mount "$EFI_PART" /mnt/efi
+mkdir -p /mnt/boot/efi
+mount "$EFI_PART" /mnt/boot/efi
 
 
 # Install Arch base
 clear
-pacstrap /mnt base linux linux-firmware nano less dhcpcd sudo pacman-contrib reflector
+pacstrap /mnt base linux linux-firmware git vim nano less dhcpcd sudo pacman-contrib reflector zsh grub efibootmgr os-prober
 
 
 # Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
 clear
-cat /mnt/etc/fstab
+
