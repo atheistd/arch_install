@@ -1,6 +1,3 @@
-
-arch-chroot /mnt
-
 systemctl enable dhcpcd.service
 
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -29,8 +26,10 @@ clear
 echo -e "\n\nEnter the root user password:\n"
 passwd
 
+
+clear
 useradd -m -G adm,ftp,games,http,log,rfkill,sys,systemd-journal,uucp,wheel -s /bin/zsh hackerman
-clear -e "\n\nEnter the user hackerman's password\n"
+echo -e "\n\nEnter the user hackerman's password\n"
 passwd hackerman
 
 visudo
