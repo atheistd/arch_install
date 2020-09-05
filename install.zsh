@@ -101,11 +101,10 @@ mount "$EFI_PART" /mnt/boot/efi
 
 # Install Arch base
 clear
-pacstrap /mnt base linux linux-firmware git vim nano less dhcpcd sudo pacman-contrib reflector zsh grub efibootmgr os-prober
+pacstrap /mnt base linux linux-firmware git vim nano less cat tail head man dhcpcd sudo pacman-contrib reflector zsh grub efibootmgr os-prober openssh
+
 
 
 # Generate fstab
-genfstab -U /mnt >> /mnt/etc/fstab
-
 clear
-
+genfstab -U /mnt >> /mnt/etc/fstab
