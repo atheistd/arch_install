@@ -5,3 +5,5 @@ sudo pacman -Sy xorg xorg-xinit lightdm lightdm-webkit2-greeter ttf-fira-code ni
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git/
 makepkg -si
+
+yay -S polybar

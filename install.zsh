@@ -101,7 +101,7 @@ mount "$EFI_PART" /mnt/boot/efi
 
 # Install Arch base
 clear
-pacstrap /mnt base linux linux-firmware git vim nano less man dhcpcd sudo pacman-contrib reflector zsh grub efibootmgr os-prober openssh
+pacstrap /mnt base linux linux-firmware git vim nano less man dhcpcd sudo pacman-contrib reflector zsh fish grub efibootmgr os-prober openssh
 
 
 
