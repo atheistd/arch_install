@@ -25,4 +25,4 @@ mount /dev/sda1 /mnt/boot/efi
 
 pacstrap /mnt base linux linux-firmware git vim nano less man dhcpcd sudo pacman-contrib reflector zsh grub efibootmgr os-prober openssh
 
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab 
