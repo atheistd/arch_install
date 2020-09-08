@@ -22,7 +22,7 @@ echo -e "initramfs suceffly created"
 
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.arch_install_bak
 
-reflector --verbose -l 100 -n 20 --protocol http --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest 200 --age 24 --fastest 10 --number 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 clear
 echo -e "Updated mirrorlist"
