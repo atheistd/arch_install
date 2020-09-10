@@ -45,10 +45,5 @@ clear
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
-cd /
-git clone https://aur.archlinux.org/yay-git.git
-cd yay-git/
-makepkg -si
-
 systemctl enable dhcpcd.service
 systemctl enable sshd

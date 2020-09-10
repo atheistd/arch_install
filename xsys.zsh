@@ -8,3 +8,8 @@ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 mkdir -p ~/.config/awesome/
 cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 vim ~/.xinitrc
+
+cd /
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git/
+makepkg -si
