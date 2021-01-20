@@ -18,7 +18,7 @@ echo -e "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\tarchy.localdomain 
 
 mkinitcpio -P
 clear
-echo -e "initramfs suceffly created"
+echo -e "initramfs successfully created"
 
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.arch_install_bak
 
