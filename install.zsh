@@ -1,5 +1,4 @@
-#!/usr/bin/zsh
-
+#!/usr/bin/env zsh
 
 # Ensure that the system clock is accurate
 timedatectl set-ntp true
