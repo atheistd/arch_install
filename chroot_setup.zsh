@@ -35,9 +35,9 @@ passwd
 
 
 clear
-useradd -m -G adm,ftp,games,http,log,rfkill,sys,systemd-journal,uucp,wheel -s /bin/zsh hackerman
-echo -e "\n\nEnter the user hackerman's password\n"
-passwd hackerman
+useradd -m -G adm,ftp,games,http,log,rfkill,sys,systemd-journal,uucp,wheel -s /bin/zsh dkwaf
+echo -e "\n\nEnter the user dkwaf's password\n"
+passwd dkwaf
 
 visudo
 
