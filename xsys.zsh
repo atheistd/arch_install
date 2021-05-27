@@ -2,7 +2,7 @@
 
 sudo pacman -Syy
 sudo pacman -Syu
-sudo pacman -Sy xorg xorg-server xorg-xinit lightdm lightdm-webkit2-greeter ttf-fira-code nitrogen conky dmenu pcmanfm picom terminator xterm firefox awesome vlc
+sudo pacman -Sy xorg xorg-server xorg-xinit lightdm lightdm-webkit2-greeter ttf-fira-code nitrogen conky dmenu pcmanfm picom terminator xterm firefox awesome vlc --noconfirm --needed
 
 #yay -S polybar
 
