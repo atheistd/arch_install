@@ -25,6 +25,7 @@ mount /dev/vda2 /mnt
 mkdir -p /mnt/boot/efi
 mount /dev/vda1 /mnt/boot/efi
 
+cp mirrorlist /etc/pacman.d/mirrorlist
 /usr/bin/zsh base_packages.zsh
 
 genfstab -U /mnt >> /mnt/etc/fstab 
