@@ -20,12 +20,7 @@ mkinitcpio -P
 clear
 echo -e "initramfs successfully created"
 
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.arch_install_bak
-
-reflector --verbose --latest 200 --sort rate --fastest 10 --number 10 --protocol https --save /etc/pacman.d/mirrorlist
-
-clear
-echo -e "Updated mirrorlist"
+cp mirrorlist /etc/pacman.d/mirrorlist
 
 pacman -Syy
 
