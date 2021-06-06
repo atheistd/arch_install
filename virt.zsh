@@ -2,7 +2,7 @@
 
 timedatectl set-ntp true
 
-fdisk /dev/vda << EOF
+fdisk /dev/sda << EOF
 g
 n
 1
@@ -18,12 +18,12 @@ t
 w
 EOF
 
-mkfs.fat -F32 /dev/vda1
-mkfs.ext4 /dev/vda2
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda2
 
-mount /dev/vda2 /mnt
+mount /dev/sda2 /mnt
 mkdir -p /mnt/boot/efi
-mount /dev/vda1 /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi
 
 cp mirrorlist /etc/pacman.d/mirrorlist
 /usr/bin/zsh base_packages.zsh
