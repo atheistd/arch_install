@@ -1,19 +1,25 @@
 #!/usr/bin/env zsh
 
 sudo pacman -Syy
-sudo paru -Syu
+yay -Syu
 
 # X11
-sudo pacman -Sy xorg xorg-server xorg-xinit lightdm lightdm-webkit2-greeter lightdm-gtk-greeter ttf-fira-code nitrogen conky dmenu pcmanfm picom terminator xterm firefox vlc i3 --noconfirm --needed
+sudo pacman -Sy xorg rofi xorg-server xorg-xinit ttf-fira-code nitrogen conky dmenu pcmanfm picom terminator xterm firefox vlc --noconfirm --needed
+#sudo pacman -Sy i3
+#sudo pacman -Sy bspwm
+
 
 # Wayland+X
 #sudo pacman -S wayland sway swaylock swayidle terminator tmux lsof
 
 # Extras
-#sudo paru -S polybar
+yay -S polybar
 
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
-mkdir -p $HOME/.config/i3/
-cp /etc/i3/config $HOME/.config/i3/
 vim $HOME/.xinitrc
 
+#mkdir -p $HOME/.config/bspwm/
+#cp /usr/share/doc/bspwm/examples/bspwmrc $HOME/.config/bspwm/
+
+#mkdir -p $HOME/.config/i3/
+#cp /etc/i3/config $HOME/.config/i3/
