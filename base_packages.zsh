@@ -1,3 +1,3 @@
 #!/usr/bin/env zsh
 
-pacstrap /mnt aria2 base base-devel bash cmatrix curl dhcpcd efibootmgr ffmpeg flatpak git grub htop iotop iperf jq less libnotify libpam-google-authenticator linux-firmware linux-lts man nano neofetch nload openssh os-prober pacman-contrib reflector rsync socat sudo tmux unzip vim wget zsh -needed
+pacstrap /mnt --needed alacritty aria2 base base-devel bash breeze bspwm cmatrix curl dhcpcd dmenu dolphin dunst efibootmgr exfatprogs feh ffmpeg firefox flatpak git grub handbrake hdparm htop i3lock iotop iperf jq less libnotify libpam-google-authenticator linux-firmware linux-lts man mediainfo mediainfo-gui mpv nano neofetch nitrogen nload openssh os-prober pacman-contrib pcmanfm picom python python-pip reflector rofi rsync smartmontools socat speedtest-cli sudo sxhkd terminator tmux ttf-fira-code ttf-font-awesome unrar unzip vim vlc wget xorg xorg-server xorg-xinit zip zsh
